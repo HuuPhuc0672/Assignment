@@ -10,14 +10,20 @@ mongoose.connect(db).catch(error => {
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-
+///////////// Hiện Dữ Liệu //////////////////////
 router.get('/anhHot',function (rep,res) {
   ViewAnhASM.find({},function (err,data) {
     res.render('AnhHot',{data:data})
     console.log(data)
   })
 });
+router.get('/GetAlllanhHot',function (rep,res) {
+  ViewAnhASM.find({},function (err,data) {
+    res.send(data)
 
+  })
+});
+////////////////////////////////////////////////////////
 router.get('/themAnh',function (rep,res) {
   res.render('ThemAnh',{title:'',mesaage:''});
 });
