@@ -73,9 +73,9 @@ router.post('/ThemHAnh',function (repuest,response){
       mes ='Thêm Ảnh Thành Công'
       console.log('Thêm Ảnh Thành Công')
     }else mes=error
-    response.render('themAnh',{message:mes})
+    response.render('ThemAnh',{message:mes})
   })
-  response.render('themAnh')
+  response.render('ThemAnh')
 
 })
 
@@ -97,7 +97,8 @@ router.post('/SuaHAnh',function (repuest,response){
 router.post('/xaoAnh',function (req , res ){
   let ObejectID = require('mongodb').ObjectId;
   var id = req.body.id;
-  ViewAnhASM.deleteOne({_id :  ObejectID(id)}, function (err){
+
+   ViewAnhASM.deleteOne({_id :  ObejectID(id)}, function (err){
     if(err){
       console.log("lỗi ");
     }else {
