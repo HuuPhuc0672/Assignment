@@ -36,11 +36,11 @@ router.get('/suaAnh',function (rep,res) {
     console.log(data)
   })
 });
-router.post('/dataUpdate', function (request, response){
-  var idPhotoUpdate = request.body.idPhotoUpdate;
+router.post('/updateAnh', function (request, response){
+  var suaAnhMoi = request.body.idSuaAnh;
 
-  console.log(idPhotoUpdate);
-  ViewAnhASM.find({_id : idPhotoUpdate}, function (err, data){
+  console.log(suaAnhMoi);
+  ViewAnhASM.find({_id : suaAnhMoi}, function (err, data){
     response.render('SuaAnh', { data: data });
   })
 });
