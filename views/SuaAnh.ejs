@@ -16,31 +16,33 @@
 
 
 <form style="margin: 50px;font-size: 18px;" method="post" action="/SuaHAnh" enctype="application/x-www-form-urlencoded">
+  <% for ( var i=0; i<data.length; i++ ) {  %>
 
 
   <div class="mb-3">
     <label for="disabledTextInput" class="form-label">Tên Ảnh </label>
-    <input name="tAnh"  type="text" class="form-control" for="disabledTextInput"  placeholder="Nhập tên ảnh">
+    <input name="tAnh"  type="text" class="form-control" for="disabledTextInput"  value="<%= data[i].tAnh %>">
   </div>
 
   <div class="mb-3">
     <label for="disabledTextInput" class="form-label">Nội Dung Ảnh</label>
-    <input name="ndAnh"  type="text" class="form-control" for="disabledTextInput"  placeholder="Nhập nội dung ảnh">
+    <input name="ndAnh"  type="text" class="form-control" for="disabledTextInput"   value="<%= data[i].ndAnh %>">
   </div>
 
   <div class="mb-3">
     <label for="disabledTextInput" class="form-label">Ngày Tháng Ảnh</label>
-    <input name="ntAnh"  type="date" class="form-control"for="disabledTextInput"  >
+    <input name="ntAnh"  type="date" class="form-control"for="disabledTextInput"  value="<%= data[i].ntAnh %>" >
   </div>
 
   <div class="mb-3">
     <label for="disabledTextInput" class="form-label">Link ảnh </label>
-    <input name="linkAnh"  type="text" class="form-control" for="disabledTextInput"  placeholder="Past link ảnh">
+    <input name="linkAnh"  type="text" class="form-control" for="disabledTextInput"value="<%= data[i].linkAnh %>">
   </div>
 
 
 
-  <button type="submit" class="btn btn-primary">Sửa ảnh </button>
+  <button type="submit" class="btn btn-primary" style="margin-left:auto;margin-right:auto;display:block;">Sửa ảnh </button>
+    <% }%>
 </form>
 
 

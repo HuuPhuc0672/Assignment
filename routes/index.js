@@ -36,7 +36,14 @@ router.get('/suaAnh',function (rep,res) {
     console.log(data)
   })
 });
+router.post('/dataUpdate', function (request, response){
+  var idPhotoUpdate = request.body.idPhotoUpdate;
 
+  console.log(idPhotoUpdate);
+  ViewAnhASM.find({_id : idPhotoUpdate}, function (err, data){
+    response.render('SuaAnh', { data: data });
+  })
+});
 ///////// Chuyền Dữ Liệu////////////////
 var VewAnhs=new mongoose.Schema({
   tAnh:'string',
@@ -73,6 +80,7 @@ router.post('/ThemHAnh',function (repuest,response){
 })
 
 router.post('/SuaHAnh',function (repuest,response){
+
   var ntenAnh=repuest.body.tAnh;
   var nndAnh=repuest.body.ndAnh;
   var nngtAnh=repuest.body.ntAnh;
@@ -85,6 +93,7 @@ router.post('/SuaHAnh',function (repuest,response){
   })
 
 })
+
 router.post('/xaoAnh',function (req , res ){
   let ObejectID = require('mongodb').ObjectId;
   var id = req.body.id;

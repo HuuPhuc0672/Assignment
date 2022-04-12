@@ -27,7 +27,14 @@
           <p class="card-text" style="font-size: 14px;color: #6c757d "> <%= data[i].ndAnh %>  </p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-              <a  class="btn btn-sm btn-outline-secondary" href="/suaAnh">Sửa </a>
+              <form method="post" action="/dataUpdate" enctype="application/x-www-form-urlencoded">
+                <a href="/suaAnh" >
+                  <button class="btn btn-sm btn-outline-secondary" name="idPhotoUpdate" type="submit" value="<%= data[i]._id %>">
+                    Sửa
+                  </button>
+                </a>
+              </form>
+             <!-- <a  class="btn btn-sm btn-outline-secondary" href="/suaAnh">Sửa </a>-->
               <form method="post" action="/xaoAnh" enctype="application/x-www-form-urlencoded">
                 <button name="id" type="submit" value="<%= data[i]._id %>" class="btn btn-sm btn-outline-secondary">Xóa</button>
               </form>
