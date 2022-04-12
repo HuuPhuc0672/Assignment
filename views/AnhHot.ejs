@@ -14,9 +14,10 @@
 <body class="container">
 <H3 style="font-family: 'Times New Roman';text-align: center; margin: 10px; margin-top: 36px">  Ảnh Mới</H3>
 
-<% for ( var i=0; i<data.length; i++ ) {  %>
+
 
   <div style="margin: 6px;margin-bottom: 30px " class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
+    <% for ( var i=0; i<data.length; i++ ) {  %>
     <div class="col" >
       <div class="card shadow-sm">
         <img src="<%= data[i].linkAnh %>">
@@ -36,47 +37,10 @@
         </div>
       </div>
     </div>
-    <div class="col" >
-      <div class="card shadow-sm">
-        <img src="<%= data[i].linkAnh %>">
-
-        <div class="card-body">
-          <p class="card-text" style=""> <%= data[i].tAnh %>  </p>
-          <p class="card-text" style="font-size: 14px;color: #6c757d "> <%= data[i].ndAnh %>  </p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-              <a  class="btn btn-sm btn-outline-secondary" href="/suaAnh">Sửa </a>
-              <form method="post" action="/xaoAnh" enctype="application/x-www-form-urlencoded">
-                <button name="id" type="submit" value="<%= data[i]._id %>" class="btn btn-sm btn-outline-secondary">Xóa</button>
-              </form>
-            </div>
-            <small class="text-muted"><%= data[i].ntAnh %></small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col" >
-      <div class="card shadow-sm">
-        <img src="<%= data[i].linkAnh %>">
-
-        <div class="card-body">
-          <p class="card-text" style=""> <%= data[i].tAnh %>  </p>
-          <p class="card-text" style="font-size: 14px;color: #6c757d "> <%= data[i].ndAnh %>  </p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-              <a  class="btn btn-sm btn-outline-secondary" href="/suaAnh">Sửa </a>
-              <form method="post" action="/xaoAnh" enctype="application/x-www-form-urlencoded">
-                <button name="id" type="submit" value="<%= data[i]._id %>" class="btn btn-sm btn-outline-secondary">Xóa</button>
-              </form>
-            </div>
-            <small class="text-muted"><%= data[i].ntAnh %></small>
-          </div>
-        </div>
-      </div>
-    </div>
+      <% }%>
   </div>
 
-<% }%>
+
 
 
 

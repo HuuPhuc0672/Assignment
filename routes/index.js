@@ -57,8 +57,8 @@ router.post('/ThemHAnh',function (repuest,response){
   data.save(function (error){
     var mes;
     if (error==null){
-      mes ='them thanhcong'
-      console.log('themthanhcong')
+      mes ='Thêm Ảnh Thành Công'
+      console.log('Thêm Ảnh Thành Công')
     }else mes=error
     response.render('themAnh',{message:mes})
   })
